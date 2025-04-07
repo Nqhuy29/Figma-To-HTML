@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào Mừng</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #messageBox {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #000;
+            background-color: #f0f0f0;
+        }
+        h1{
+            color: #f71818;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nguyễn Quang Huy - CD234367 - UDPMK1-K15</h1>
+    <h2>Nhập tên của bạn</h2>
+    <input type="text" id="nameInput" placeholder="Nhập tên...">
+    <button id="btnChao">Chào!</button>
+    <div id="messageBox"></div>
+
+    <script>
+        $(document).ready(function(){
+            $("#btnChao").click(function(){
+                var name = $("#nameInput").val().trim();
+                if (name === "") {
+                    alert("Vui lòng nhập tên!");
+                } else {
+                    $("#messageBox").text("Chào mừng, " + name + "!").slideToggle();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .warning {
+            color: red;
+        }
+        h1{
+            text-align: center;
+            color: blue
+        }
+    </style>
+</head>
+<body>
+
+  <h1>Le Kien - UDPM1_K5 - N1</h1>
+    <input type="text" id="nameInput" placeholder="Nhập tên của bạn">
+    <button id="submitButton">Gửi</button>
+    <div id="message"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#submitButton").click(function() {
+                let name = $("#nameInput").val().trim();
+                if (name) {
+                    $("#message").html("Chào mừng, " + name + "!").removeClass("warning").slideToggle();
+                } else {
+                    $("#message").html("Vui lòng nhập tên!").addClass("warning").slideToggle();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
